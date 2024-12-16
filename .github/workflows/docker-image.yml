@@ -30,6 +30,12 @@ jobs:
         context: ./frontend/
         push: true
         tags: ghcr.io/joshuaprout/docker-build-frontend:main
-      
+
+    - name: Build backend docker image
+      uses: docker/build-push-action@v6
+      with:
+        context: ./api/
+        push: true
+        tags: ghcr.io/joshuaprout/docker-build-backend:main
       
     
