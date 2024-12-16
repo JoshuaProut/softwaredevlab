@@ -19,5 +19,10 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    
+
+    - name: Build frontend docker image
+      run:
+        docker build . --tag ghcr.io/JoshuaProut/store:latest
+        docker push ghcr.io/JoshuaProut/store:latest
+      
     
